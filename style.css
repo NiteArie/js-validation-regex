@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.container__form {
+    padding: 20px;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+}
+
+.container__form__title {
+    margin: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container__form__input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid hsl(200, 10%, 90%);
+    margin-bottom: 20px; 
+}
+
+.container__form__input:focus {
+    outline: none;
+    border: 2px solid hsla(246, 52%, 37%, 0.568);
+}
+
+.container__form__error-msg {
+    color: hsl(0, 50%, 50%);
+}
+
+.container__form__buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container__form__buttons__submit {
+    padding: 10px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    background-color: hsla(246, 52%, 37%, 1);
+    border: 1px solid hsl(200, 10%, 90%);
+    cursor: pointer;
+}
+
+.container__form__buttons__submit:hover {
+    background-color: hsla(246, 40%, 30%, 1);
+}
