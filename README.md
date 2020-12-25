@@ -14,5 +14,5 @@ The third which could be used as email address would require the user to enter o
 
 ## User Stories
 
-* [ ] User should be notified of any invalid inputs by error messages displayed on the form.
+* [X] User should be notified of any invalid inputs by error messages displayed on the form.
 * [ ] The submit button on the form would never be executed until all entries are validated.
