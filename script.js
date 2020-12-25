@@ -1,7 +1,9 @@
 const app = (() => {
+    const _form = document.querySelector('.container__form');
     const _input = document.querySelector('.container__form__input');
     const _errorDisplay = document.querySelector('.container__form__error-msg');
     const _submitButton = document.querySelector('.container__form__buttons__submit');
+    const _modal = document.querySelector('.modal');
 
     const _capitalRe = /[A-Z]/g;
     const _symbolRe = /[`~!@#$%^&\*(\)\/:"';_?.,{}=+]/g;
@@ -11,10 +13,21 @@ const app = (() => {
     _input.addEventListener('input', (event) => {
         if (validateInput(event.target.value)) {
             hideErrorDisplay();
+            enableSubmitButton();
         } else {
             showErrorDisplay();
             updateErrorDisplayContent(_errorMessage);
+            disableSubmitButton();
         }
+    })
+
+    _form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        showModal();
+    })
+
+    _modal.addEventListener('click', (event) => {
+        hideModal();
     })
 
     function validateInput(text) {
@@ -47,6 +60,22 @@ const app = (() => {
 
     function updateErrorDisplayContent(content) {
         _errorDisplay.textContent = content;
+    }
+
+    function disableSubmitButton() {
+        _submitButton.disabled = true;
+    }
+
+    function enableSubmitButton() {
+        _submitButton.disabled = false;
+    }
+
+    function showModal() {
+        _modal.classList.remove('hidden');
+    }
+
+    function hideModal() {
+        _modal.classList.add('hidden');
     }
 
 })();
